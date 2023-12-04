@@ -37,6 +37,7 @@ BuildRequires:	cmake(KF6KIO)
 BuildRequires:	cmake(KF6Prison)
 BuildRequires:	cmake(KF6TextWidgets)
 BuildRequires:	cmake(KF6KCMUtils)
+BuildRequires:	cmake(KF6TextUtils)
 BuildRequires:	boost-devel
 # For QCH format docs
 BuildRequires: doxygen
