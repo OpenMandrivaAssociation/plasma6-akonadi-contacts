@@ -1,5 +1,5 @@
 Name:		plasma6-akonadi-contacts
-Version:	24.01.85
+Version:	24.01.90
 Release:	1
 Summary:	Akonadi Contacts Integration
 License:	GPLv2+ and LGPLv2+
@@ -137,6 +137,6 @@ based on %{name} Widgets.
 
 %install
 %ninja_install -C build
-%find_lang akonadicontact5
-%find_lang akonadicontact5-serializer
+%find_lang akonadicontact6
+%find_lang akonadicontact6-serializer
 cat *.lang >%{name}.lang
