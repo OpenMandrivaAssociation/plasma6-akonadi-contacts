@@ -1,5 +1,5 @@
 Name:		plasma6-akonadi-contacts
-Version:	24.01.90
+Version:	24.01.95
 Release:	1
 Summary:	Akonadi Contacts Integration
 License:	GPLv2+ and LGPLv2+
