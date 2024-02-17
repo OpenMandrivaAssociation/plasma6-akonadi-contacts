@@ -1,6 +1,9 @@
+%define git 20240217
+%define gitbranch release/24.02
+%define gitbranchd %(echo %{gitbranch} |sed -e "s,/,-,g")
 Name:		plasma6-akonadi-contacts
-Version:	24.01.95
-Release:	1
+Version:	24.01.96
+Release:	%{?git:0.%{git}.}1
 Summary:	Akonadi Contacts Integration
 License:	GPLv2+ and LGPLv2+
 Group:		Graphical desktop/KDE
@@ -11,7 +14,11 @@ URL:		https://www.kde.org/
 %else
 %define ftpdir stable
 %endif
+%if 0%{?git:1}
+Source0:	https://invent.kde.org/pim/akonadi-contacts/-/archive/%{gitbranch}/akonadi-contacts-%{gitbranchd}.tar.bz2#/akonadi-contacts-20240217.tar.bz2
+%else
 Source0:	http://download.kde.org/%{ftpdir}/release-service/%{version}/src/akonadi-contacts-%{version}.tar.xz
+%endif
 
 BuildRequires:	cmake(Qt6)
 BuildRequires:	cmake(Qt6Core)
@@ -127,7 +134,7 @@ based on %{name} Widgets.
 #--------------------------------------------------------------------
 
 %prep
-%autosetup -p1 -n akonadi-contacts-%{version}
+%autosetup -p1 -n akonadi-contacts-%{?git:%{gitbranchd}}%{!?git:%{version}}
 %cmake \
 	-DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON \
 	-G Ninja
