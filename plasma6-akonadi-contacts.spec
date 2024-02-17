@@ -15,7 +15,7 @@ URL:		https://www.kde.org/
 %define ftpdir stable
 %endif
 %if 0%{?git:1}
-Source0:	https://invent.kde.org/pim/akonadi-contacts/-/archive/%{gitbranch}/akonadi-contacts-%{gitbranchd}.tar.bz2#/akonadi-contacts-20240217.tar.bz2
+Source0:	https://invent.kde.org/pim/akonadi-contacts/-/archive/%{gitbranch}/akonadi-contacts-%{gitbranchd}.tar.bz2#/akonadi-contacts-%{git}.tar.bz2
 %else
 Source0:	http://download.kde.org/%{ftpdir}/release-service/%{version}/src/akonadi-contacts-%{version}.tar.xz
 %endif
